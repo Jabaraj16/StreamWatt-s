@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import SEO from '../components/SEO';
 import SearchBar from '../components/SearchBar';
 import FeaturedCarousel from '../components/FeaturedCarousel';
 import RecommendationRow from '../components/RecommendationRow';
@@ -64,6 +65,7 @@ const Dashboard = () => {
     if (debouncedSearch && filteredChannels.length >= 0) {
         return (
             <main className="dashboard-main">
+                <SEO title="Search Results" description={`Search results for ${debouncedSearch}`} />
                 <div className="dashboard-header">
                     <h1 className="dashboard-title">Search Results</h1>
                     <SearchBar
@@ -107,6 +109,7 @@ const Dashboard = () => {
     // Default dashboard view
     return (
         <main className="dashboard-main">
+            <SEO title="Home" />
             <div className="dashboard-header">
                 <h1 className="dashboard-title">Dashboard</h1>
                 <SearchBar

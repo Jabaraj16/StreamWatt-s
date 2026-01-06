@@ -3,6 +3,7 @@ import ChannelCard from '../components/ChannelCard';
 import EmptyState from '../components/EmptyState';
 import Pagination from '../components/Pagination';
 import ViewAllButton from '../components/ViewAllButton';
+import SEO from '../components/SEO';
 import { useIPTV } from '../hooks/useIPTV';
 import CategoryIcon from '@mui/icons-material/Category';
 import './CategoriesPage.css';
@@ -106,6 +107,7 @@ const CategoriesPage = () => {
 
     return (
         <main className="categories-main">
+            <SEO title="Categories" description="Browse channels by category, country, or language." />
             <div className="categories-header">
                 <h1 className="page-title">Filter By Categories</h1>
                 {hasFilters && (

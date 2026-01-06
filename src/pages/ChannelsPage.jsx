@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { gsap } from 'gsap';
 import SearchBar from '../components/SearchBar';
+import SEO from '../components/SEO';
 import ChannelCard from '../components/ChannelCard';
 import SkeletonCard from '../components/SkeletonCard';
 import EmptyState from '../components/EmptyState';
@@ -74,9 +75,15 @@ const ChannelsPage = () => {
     };
 
     const countryName = countryCode ? getCountryNameByCode(countries, countryCode) : null;
+    const pageTitle = countryName ? `Channels in ${countryName}` : 'All Channels';
 
     return (
         <main className="channels-main" ref={contentRef}>
+            <SEO
+                title={pageTitle}
+                description={`Browse ${countryName ? `live TV channels from ${countryName}` : 'all live TV channels'} on StreamWatt's.`}
+                url={`/channels${countryCode ? `/country/${countryCode}` : ''}`}
+            />
             <div className="channels-header">
                 <div className="header-title-section">
                     {countryCode && countryName ? (

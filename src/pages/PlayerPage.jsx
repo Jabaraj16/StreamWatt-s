@@ -5,6 +5,7 @@ import PlayerErrorFallback from '../components/PlayerErrorFallback';
 import RecommendationRow from '../components/RecommendationRow';
 import CountryFlag from '../components/CountryFlag';
 import ChannelLogo from '../components/ChannelLogo';
+import SEO from '../components/SEO';
 import { useIPTV } from '../hooks/useIPTV';
 import { getCountryNameByCode } from '../utils/filterChannelsByCountry';
 import { useRouteCleanup } from '../hooks/useRouteCleanup';
@@ -95,6 +96,13 @@ const PlayerPage = () => {
 
     return (
         <main className="player-main">
+            <SEO
+                title={channel.name}
+                description={`Watch ${channel.name} live on StreamWatt's. ${channel.categories ? channel.categories.join(', ') : ''} channel from ${countryName || channel.country || 'World'}.`}
+                image={channel.logo}
+                url={`/player/${channel.id}`}
+                type="video.other"
+            />
             <button className="back-button" onClick={() => navigate(-1)}>
                 <ArrowBackIcon />
                 <span>Back</span>

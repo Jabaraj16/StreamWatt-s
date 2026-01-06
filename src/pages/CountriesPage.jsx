@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { gsap } from 'gsap';
 import SearchBar from '../components/SearchBar';
+import SEO from '../components/SEO';
 import CountryCard from '../components/CountryCard';
 import Loader from '../components/Loader';
 import { useIPTV } from '../hooks/useIPTV';
@@ -92,6 +93,7 @@ const CountriesPage = () => {
 
     return (
         <main className="countries-page" ref={pageRef}>
+            <SEO title="All Countries" description="Browse live TV channels by country." />
             <div className="countries-header">
                 <button className="back-button" onClick={() => navigate(-1)}>
                     <ArrowBackIcon />
