@@ -21,9 +21,15 @@
     margin-bottom: 30px;
 }
 
-.back-button:hover {
-    background: rgba(255, 255, 255, 0.1);
-    transform: translateX(-5px);
+@media (hover: hover) {
+    .back-button:hover {
+        background: rgba(255, 255, 255, 0.1);
+        transform: translateX(-5px);
+    }
+}
+
+.back-button:active {
+    transform: scale(0.98);
 }
 
 .player-container {
@@ -126,10 +132,16 @@
     transition: all 0.3s ease;
 }
 
-.action-btn:hover {
-    background: rgba(255, 255, 255, 0.15);
-    color: #fff;
-    transform: scale(1.1);
+@media (hover: hover) {
+    .action-btn:hover {
+        background: rgba(255, 255, 255, 0.15);
+        color: #fff;
+        transform: scale(1.1);
+    }
+}
+
+.action-btn:active {
+    transform: scale(0.95);
 }
 
 .detail-row {
@@ -186,9 +198,15 @@
     transition: all 0.3s ease;
 }
 
-.stream-option:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
+@media (hover: hover) {
+    .stream-option:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+    }
+}
+
+.stream-option:active {
+    transform: scale(0.98);
 }
 
 .stream-option.active {

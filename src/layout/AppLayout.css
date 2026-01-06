@@ -4,6 +4,39 @@
     background: #0f1419;
     overflow-x: hidden;
     width: 100%;
+    position: relative;
+}
+
+.mobile-menu-btn {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 2000;
+    background: rgba(15, 20, 25, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.mobile-menu-btn:active {
+    transform: scale(0.95);
+}
+
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 999;
 }
 
 .app-content {
@@ -13,11 +46,40 @@
     overflow-x: hidden;
     width: calc(100% - 260px);
     max-width: 100%;
+    transition: margin-left 0.3s ease, width 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+    .app-content {
+        margin-left: 80px;
+        width: calc(100% - 80px);
+    }
 }
 
 @media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: flex;
+    }
+
+    .sidebar-overlay {
+        display: block;
+        animation: fadeIn 0.3s ease;
+    }
+
     .app-content {
-        margin-left: 70px;
-        width: calc(100% - 70px);
+        margin-left: 0;
+        width: 100%;
+        padding-top: 60px;
+        /* Space for hamburger */
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
     }
 }
