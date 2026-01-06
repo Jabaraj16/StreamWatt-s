@@ -1,0 +1,23 @@
+.app-layout {
+    display: flex;
+    min-height: 100vh;
+    background: #0f1419;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.app-content {
+    flex: 1;
+    margin-left: 260px;
+    min-height: 100vh;
+    overflow-x: hidden;
+    width: calc(100% - 260px);
+    max-width: 100%;
+}
+
+@media (max-width: 768px) {
+    .app-content {
+        margin-left: 70px;
+        width: calc(100% - 70px);
+    }
+}

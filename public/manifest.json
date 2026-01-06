@@ -1,0 +1,16 @@
+{
+    "name": "StreamWatt's",
+    "short_name": "StreamWatt",
+    "description": "StreamWatt's – Watch live TV channels from around the world",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#0f1419",
+    "theme_color": "#667eea",
+    "icons": [
+        {
+            "src": "/vite.svg",
+            "sizes": "any",
+            "type": "image/svg+xml"
+        }
+    ]
+}
