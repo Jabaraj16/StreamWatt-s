@@ -104,6 +104,12 @@
     gap: 28px;
 }
 
+@media (min-width: 1024px) {
+    .results-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
 .page-title {
     font-size: 36px;
     font-weight: 700;
