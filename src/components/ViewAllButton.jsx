@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { ExpandMore } from '@mui/icons-material';
 import './ViewAllButton.css';
 
 const ViewAllButton = ({ to, children }) => {
@@ -13,7 +13,7 @@ const ViewAllButton = ({ to, children }) => {
             aria-label={children}
         >
             <span>{children}</span>
-            <ExpandMoreIcon className="expand-icon" />
+            <ExpandMore className="expand-icon" />
         </button>
     );
 };

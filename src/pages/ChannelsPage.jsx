@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { gsap } from 'gsap';
 import SearchBar from '../components/SearchBar';
 import SEO from '../components/SEO';
+import AdSlot from '../components/AdSlot';
 import ChannelCard from '../components/ChannelCard';
 import SkeletonCard from '../components/SkeletonCard';
 import EmptyState from '../components/EmptyState';
@@ -51,13 +52,17 @@ const ChannelsPage = () => {
     }, [debouncedSearch, channels, countryCode]);
 
     useEffect(() => {
+        let ctx;
         if (contentRef.current) {
-            gsap.fromTo(
-                contentRef.current,
-                { opacity: 0, y: 20 },
-                { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' }
-            );
+            ctx = gsap.context(() => {
+                gsap.fromTo(
+                    contentRef.current,
+                    { opacity: 0, y: 20 },
+                    { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' }
+                );
+            });
         }
+        return () => ctx && ctx.revert();
     }, [countryCode]);
 
     const totalPages = Math.ceil(filteredChannels.length / ITEMS_PER_PAGE);
@@ -127,8 +132,17 @@ const ChannelsPage = () => {
                         Showing {startIndex + 1}-{Math.min(endIndex, filteredChannels.length)} of {filteredChannels.length} channel{filteredChannels.length !== 1 ? 's' : ''}
                     </p>
                     <div className="channels-grid">
-                        {currentChannels.map((channel) => (
-                            <ChannelCard key={channel.id} channel={channel} />
+                        {currentChannels.map((channel, index) => (
+                            <React.Fragment key={channel.id}>
+                                <ChannelCard channel={channel} />
+                                {(index + 1) % 12 === 0 && (
+                                    <AdSlot
+                                        slotId="5678901234"
+                                        className="ad-inline-grid"
+                                        format="horizontal"
+                                    />
+                                )}
+                            </React.Fragment>
                         ))}
                     </div>
                     <Pagination

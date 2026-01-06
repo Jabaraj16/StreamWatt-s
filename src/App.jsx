@@ -12,6 +12,7 @@ const ChannelsPage = lazy(() => import('./pages/ChannelsPage'));
 const PlayerPage = lazy(() => import('./pages/PlayerPage'));
 const CategoriesPage = lazy(() => import('./pages/CategoriesPage'));
 const CountriesPage = lazy(() => import('./pages/CountriesPage'));
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
               <Route path="/player/:id" element={<PlayerPage />} />
               <Route path="/categories" element={<CategoriesPage />} />
               <Route path="/categories/countries" element={<CountriesPage />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="*" element={<Navigate to="/dashboard" replace />} />
             </Route>
           </Routes>

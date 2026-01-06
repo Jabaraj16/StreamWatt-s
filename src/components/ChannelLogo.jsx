@@ -71,9 +71,10 @@ const ChannelLogo = ({ src, name, size = 'md', className = '' }) => {
                 onLoad={handleLoad}
                 onError={handleError}
                 loading="lazy"
+                decoding="async"
             />
         </div>
     );
 };
 
-export default ChannelLogo;
+export default React.memo(ChannelLogo);

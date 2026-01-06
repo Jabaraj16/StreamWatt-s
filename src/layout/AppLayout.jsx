@@ -1,6 +1,8 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, Link } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
+import AdSlot from '../components/AdSlot';
+import ConsentBanner from '../components/ConsentBanner';
 import './AppLayout.css';
 
 const AppLayout = () => {
@@ -33,7 +35,18 @@ const AppLayout = () => {
 
             <div className="app-content">
                 <Outlet />
+
+                <footer className="app-footer">
+                    <AdSlot slotId="2468135790" className="ad-footer" />
+                    <div className="footer-links">
+                        <Link to="/privacy-policy" className="footer-link">Privacy Policy</Link>
+                        <span className="footer-separator">•</span>
+                        <span>StreamWatt's © {new Date().getFullYear()}</span>
+                    </div>
+                </footer>
             </div>
+
+            <ConsentBanner />
         </div>
     );
 };

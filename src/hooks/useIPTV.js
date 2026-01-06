@@ -37,6 +37,12 @@ export const useIPTV = () => {
         fetchData();
     }, []);
 
+    // Memoize return value to prevent unnecessary re-renders in consumers
+    if (loading) {
+        // Return stable loading object
+        return { channels: [], categories: [], countries: [], languages: [], loading: true, error: null };
+    }
+
     return {
         channels,
         categories,

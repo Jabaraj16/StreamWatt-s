@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import SEO from '../components/SEO';
+import AdSlot from '../components/AdSlot';
 import SearchBar from '../components/SearchBar';
 import FeaturedCarousel from '../components/FeaturedCarousel';
 import RecommendationRow from '../components/RecommendationRow';
@@ -75,6 +76,8 @@ const Dashboard = () => {
                     />
                 </div>
 
+                <AdSlot slotId="1234567890" className="ad-dashboard-top" />
+
                 {filteredChannels.length > 0 ? (
                     <>
                         <p className="search-results-count">
@@ -118,6 +121,8 @@ const Dashboard = () => {
                     placeholder="Search channels, countries..."
                 />
             </div>
+
+            <AdSlot slotId="0987654321" className="ad-dashboard-top" />
 
             <div className="stats-grid">
                 <div className="stat-card">

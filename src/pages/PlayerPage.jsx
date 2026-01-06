@@ -6,6 +6,7 @@ import RecommendationRow from '../components/RecommendationRow';
 import CountryFlag from '../components/CountryFlag';
 import ChannelLogo from '../components/ChannelLogo';
 import SEO from '../components/SEO';
+import AdSlot from '../components/AdSlot';
 import { useIPTV } from '../hooks/useIPTV';
 import { getCountryNameByCode } from '../utils/filterChannelsByCountry';
 import { useRouteCleanup } from '../hooks/useRouteCleanup';
@@ -206,6 +207,8 @@ const PlayerPage = () => {
                     channels={recommendations}
                 />
             )}
+
+            <AdSlot slotId="9876543210" className="ad-player-sticky-mobile" />
         </main>
     );
 };

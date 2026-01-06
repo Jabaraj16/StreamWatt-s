@@ -5,7 +5,7 @@ import CountryFlag from './CountryFlag';
 import ChannelLogo from './ChannelLogo';
 import './ChannelCard.css';
 
-const ChannelCard = ({ channel }) => {
+const ChannelCard = React.memo(({ channel }) => {
     const navigate = useNavigate();
 
     if (!channel) return null;
@@ -40,6 +40,6 @@ const ChannelCard = ({ channel }) => {
             </div>
         </div>
     );
-};
+});
 
 export default ChannelCard;
