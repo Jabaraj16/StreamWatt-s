@@ -176,6 +176,16 @@
     display: block;
   }
 
+  .logo-text {
+    font-size: 20px;
+    /* Reduce font size on mobile to prevent overflow */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 180px;
+    /* Ensure it truncates if screen is very narrow */
+  }
+
   .nav-item {
     justify-content: flex-start;
     padding: 14px 16px;
