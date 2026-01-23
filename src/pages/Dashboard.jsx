@@ -76,6 +76,10 @@ const Dashboard = () => {
                     />
                 </div>
 
+                <div className="copyright-notice">
+                    ⚠️ Some channels may not work due to copyright restrictions
+                </div>
+
                 <AdSlot slotId="1234567890" className="ad-dashboard-top" />
 
                 {filteredChannels.length > 0 ? (
@@ -120,6 +124,10 @@ const Dashboard = () => {
                     onChange={setSearchQuery}
                     placeholder="Search channels, countries..."
                 />
+            </div>
+
+            <div className="copyright-notice">
+                ⚠️ Some channels may not work due to copyright restrictions
             </div>
 
             <AdSlot slotId="0987654321" className="ad-dashboard-top" />
