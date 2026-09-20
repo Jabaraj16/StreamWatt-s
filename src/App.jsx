@@ -1,6 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
+import { Analytics } from '@vercel/analytics/react';
 import EnhancedErrorBoundary from './components/EnhancedErrorBoundary';
 import AppLayout from './layout/AppLayout';
 import Loader from './components/Loader';
@@ -34,6 +35,7 @@ function App() {
           </Routes>
         </Suspense>
       </EnhancedErrorBoundary>
+      <Analytics />
     </HelmetProvider>
   );
 }
